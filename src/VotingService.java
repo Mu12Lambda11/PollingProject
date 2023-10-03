@@ -6,11 +6,16 @@ public class VotingService {
     private int dCount=0;
     private int trueCount=0;
     private int falseCount=0;
+    private Question configuredQuestion;
+    private String questionText=configuredQuestion.getQuestion();
+    private String questionAnswer=configuredQuestion.getAnswer();
 
-    //
-    void gatherVotes(String answer){
 
+    //Method to configure question
+    void configureQuestion(Question givenQuestion){
+        Question configuredQuestion = givenQuestion;
     }
+
 
 
     //Processes all votes, and increments the respective vote counter
@@ -43,36 +48,14 @@ public class VotingService {
 
     }
 
-    //Processes all votes, and increments the respective vote counter
-    void processVotesArray(String[] answer){
-        for(int i =0; i<answer.length;i++){
-            switch(answer[i].toLowerCase()){
-                case "a":
-                aCount++;
-                break;
+    //Print out the configured question
+    void displayQuestion(){
+        System.out.println(questionText);
+    }
 
-                case "b":
-                bCount++;
-                break;
-
-                case "c":
-                cCount++;
-                break;
-
-                case "d":
-                dCount++;
-                break;
-
-                case "true":
-                trueCount++;
-                break;
-
-                case "false":
-                falseCount++;
-                break;
-            }
-         }
-
+    //Print out the configured question's answer
+    void displayAnswer(){
+        System.out.println(questionAnswer);
     }
 
     //Display all question data

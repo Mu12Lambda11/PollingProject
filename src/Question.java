@@ -1,20 +1,15 @@
 abstract class Question {
     //variables for questions and the true question
-    String questionText="Sample Question";
-    String questionAnswer="Sample Answer";
-
-    //Method for displaying questions
-    void displayQuestion(){
-
-    }
+    private static String questionText="Sample Question";
+    private static String questionAnswer="Sample Answer";
 
     //Method to get the question string
-    String getQuestion(){
+    static String getQuestion(){
         return questionText;
     }
 
     //Method to get the answer string
-    String getAnswer(){
+    static String getAnswer(){
         return questionAnswer;
     }
 

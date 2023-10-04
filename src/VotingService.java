@@ -69,6 +69,26 @@ public class VotingService {
         }
     }
 
+    //Processes all votes from a multiple choice question,
+    //and increments the respective vote counter
+    void processMultipleVotes(ArrayList answers){
+        for(int i=0; i<answers.size();i++){
+            
+            if(((String)answers.get(i)).toLowerCase().contains("a")){
+                aCount++;
+            }
+            if(((String)answers.get(i)).toLowerCase().contains("b")){
+                bCount++;
+            }
+            if(((String)answers.get(i)).toLowerCase().contains("c")){
+                cCount++;
+            }
+            if(((String)answers.get(i)).toLowerCase().contains("d")){
+                dCount++;
+            }
+        }
+    }
+
     //Resets the studentSubmission and count variables to prepare for the next question
     void resetVariables(){
     aCount=0;

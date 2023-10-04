@@ -28,7 +28,7 @@ public class SimulatorDriver {
         singleChoiceAnswers=generateStudentsAndAnswers(1);
 
         //use iVoteService to process all the information
-        useVoteService(singleChoiceAnswers);
+        useVoteService(singleChoiceAnswers, "single");
 
         //MULTIPLE CHOICE
         System.out.println("MULTIPLE CHOICE\n");
@@ -39,7 +39,7 @@ public class SimulatorDriver {
         multipleChoiceAnswers=generateStudentsAndAnswers(2);
 
         //use iVoteService to process all the information
-        useVoteService(multipleChoiceAnswers);
+        useVoteService(multipleChoiceAnswers, "multiple");
 
         //TRUE/FALSE
         System.out.println("TRUE OR FALSE\n");
@@ -50,7 +50,7 @@ public class SimulatorDriver {
         booleanAnswers=generateStudentsAndAnswers(3);
 
         //use iVoteService to process all the information
-        useVoteService(booleanAnswers);
+        useVoteService(booleanAnswers,"single");
 
         
 
@@ -91,7 +91,7 @@ public class SimulatorDriver {
                 numOfStudents++;
                 //generate student attributes
                 student.generateID();
-                choiceAnswers.add(student.generateMultipleAnswers(numOfStudents));
+                choiceAnswers.add(student.generateMultipleAnswers());
                 student.setAnswer(choiceAnswers.get(choiceAnswers.size()-1));
                 //submit answer 
                 iVoteService.acceptSubmission(student);
@@ -127,12 +127,20 @@ public class SimulatorDriver {
         numOfStudents=0;
     }
 
-    private static void useVoteService(ArrayList<String> choiceAnswers){
+    private static void useVoteService(ArrayList<String> choiceAnswers, String singleOrMultiple){
         //display question
         //iVoteService.displayQuestion();
 
-        //Process the students' votes
-        iVoteService.processVotes(choiceAnswers);
+        switch(singleOrMultiple){
+            case "single":
+             //Process the students' votes
+             iVoteService.processVotes(choiceAnswers);
+            break;
+            case "multiple":
+             //Process the students' votes
+             iVoteService.processMultipleVotes(choiceAnswers);
+            break;
+        }
 
         //display answer
         //iVoteService.displayAnswer();

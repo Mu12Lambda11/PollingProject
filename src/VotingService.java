@@ -12,7 +12,7 @@ public class VotingService {
     private ArrayList<String> studentSubmissionIDs= new ArrayList<String>();
     private Question configuredQuestion;
     private String questionText=configuredQuestion.getQuestion();
-    private String questionAnswer=configuredQuestion.getAnswer();
+    private String questionAnswer=configuredQuestion.getTrueAnswer();
 
 
     //Method to configure question
@@ -35,7 +35,7 @@ public class VotingService {
                 studentSubmissions.set(i, student.getStudentAnswer());
             }
         }
-    }
+     }
     }
 
     //Processes all votes, and increments the respective vote counter
@@ -92,8 +92,9 @@ public class VotingService {
     }
 
     //Display all question data
-    void displayStats(){
-    System.out.println("These are the statistics for each answer");
-    System.out.println("A:"+aCount+"B:"+bCount+"C:"+cCount+"D:"+dCount+"True"+trueCount+"False"+falseCount);
+    void displayStats(int numOfStudents){
+    System.out.println("These are the statistics for each answer\n");
+    System.out.println("These are the number of students:" + numOfStudents);
+    System.out.println("A:"+aCount+"\nB:"+bCount+"\nC:"+cCount+"\nD:"+dCount+"\nTrue"+trueCount+"\nFalse"+falseCount+"\n");
     }
 }

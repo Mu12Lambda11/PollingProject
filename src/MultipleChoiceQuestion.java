@@ -1,22 +1,23 @@
 public class MultipleChoiceQuestion extends Question{
 
     private String questionText=Question.getQuestion();
-    private String questionAnswer=Question.getAnswer();
+    private String trueAnswer=Question.getTrueAnswer();
+    private String[] wrongAnswer=Question.getWrongAnswers();
 
     //Method for setting multiple answers
-    @Override void setAnswer(String answers){
+    @Override void setTrueAnswer(String answers){
         answers=answers.toLowerCase();
         if(answers.contains("a")){
-            questionAnswer+="a ";
+            trueAnswer+="a ";
             }   
         if(answers.contains("b")){
-            questionAnswer+="b ";
+            trueAnswer+="b ";
             }   
         if(answers.contains("c")){
-            questionAnswer+="c ";
+            trueAnswer+="c ";
             }   
         if(answers.contains("d")){
-            questionAnswer+="d ";
+            trueAnswer+="d ";
             }   
     }
 

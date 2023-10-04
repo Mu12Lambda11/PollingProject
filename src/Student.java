@@ -41,13 +41,13 @@ public class Student {
     }
 
     //generates a student's multiple choice answer
-    String generateMultipleAnswer(){
+    String generateMultipleAnswers(int numOfStudents){
         Random random = new Random();
         String answer ="";
         //generates a base case so that there is at least one answer
         answer +=generateSingleAnswer();
         //generates a true/false parameter, then if true, generates a random answer
-        for(int i =0; i<3; i++){
+        for(int i =0; i<numOfStudents-1; i++){
             if(random.nextBoolean()){
                 answer+= generateSingleAnswer();
             }

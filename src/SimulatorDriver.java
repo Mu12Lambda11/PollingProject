@@ -1,3 +1,9 @@
+/*
+ * By Isaiah Jordan
+ * CS3560
+ * Assignment 1
+ */
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -56,7 +62,9 @@ public class SimulatorDriver {
 
     
     }
-
+    //Function to generate the student instances and their respective answers.
+    //The information is then processed by the VotingService instance.
+    //@param option
     private static ArrayList generateStudentsAndAnswers(int option){
         Random random = new Random();
         ArrayList<String> choiceAnswers = new ArrayList<String>();
@@ -122,12 +130,18 @@ public class SimulatorDriver {
         return choiceAnswers;
 
     }
-
+    //Function to reset the variable counting the number of students
     private static void resetNumStudents(){
         numOfStudents=0;
     }
 
+    //Function to use all the utilities of the VotingService instance.
+    /* @param choiceAnswers
+     * @param singleOrMultiple
+     */
     private static void useVoteService(ArrayList<String> choiceAnswers, String singleOrMultiple){
+        //Warning:Method is faulty, but unecessary for this implementation. Therefore, it is disabled.
+        //->
         //display question
         //iVoteService.displayQuestion();
 
@@ -142,6 +156,8 @@ public class SimulatorDriver {
             break;
         }
 
+        //Warning:Method is faulty, but unecessary for this implementation.  Therefore, it is disabled.
+        //->
         //display answer
         //iVoteService.displayAnswer();
 

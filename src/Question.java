@@ -19,16 +19,22 @@ public class Question {
     }
 
     //Method for setting question text
+    //@param desiredQuestion
     void setQuestion(String desiredQuestion){
         questionText=desiredQuestion;
     }
 
     //Method for setting answer text
+    //@param desiredAnswer
     void setTrueAnswer(String desiredAnswer){
         trueAnswer=desiredAnswer;
     }
 
     //Method for setting the wrong answers
+    /* @param answer1
+     * @param answer2
+     * @param answer3
+     */
     void setWrongAnswers(String answer1, String answer2, String answer3){
         wrongAnswers[1]=answer1;
         wrongAnswers[2]=answer2;

@@ -14,6 +14,7 @@ public class Student {
     }
 
     //sets the student's answer
+    //@param input
     void setAnswer(String input){
         studentAnswer=input;
     }

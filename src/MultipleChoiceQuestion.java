@@ -5,6 +5,7 @@ public class MultipleChoiceQuestion extends Question{
     private String[] wrongAnswer=Question.getWrongAnswers();
 
     //Method for setting multiple answers
+    //@param answers
     @Override void setTrueAnswer(String answers){
         answers=answers.toLowerCase();
         if(answers.contains("a")){

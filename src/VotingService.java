@@ -15,13 +15,15 @@ public class VotingService {
     private String questionAnswer=configuredQuestion.getTrueAnswer();
 
 
-    //Method to configure question
+    //Method to configure question for use within this class
+    //@param givenQuestion
     void configureQuestion(Question givenQuestion){
         Question configuredQuestion = givenQuestion;
     }
 
 
     //Accept student submissions after verifying their ID
+    //@param student
     void acceptSubmission(Student student){
     //if ID array does not contain student's ID, ...
     if(!(studentSubmissionIDs.contains(student.getID()))){
@@ -39,6 +41,7 @@ public class VotingService {
     }
 
     //Processes all votes, and increments the respective vote counter
+    //@param answers
     void processVotes(ArrayList answers){
         for(int i=0; i<answers.size();i++){
             switch(((String)answers.get(i)).toLowerCase()){
@@ -71,6 +74,7 @@ public class VotingService {
 
     //Processes all votes from a multiple choice question,
     //and increments the respective vote counter
+    //@param answers
     void processMultipleVotes(ArrayList answers){
         for(int i=0; i<answers.size();i++){
             
@@ -112,6 +116,7 @@ public class VotingService {
     }
 
     //Display all question data
+    //@param numOfStudents
     void displayStats(int numOfStudents){
     System.out.println("These are the statistics for each answer\n");
     System.out.println("These are the number of students:" + numOfStudents);

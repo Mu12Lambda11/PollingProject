@@ -4,6 +4,7 @@ public class TrueFalseQuestion extends Question{
     private String trueAnswer=Question.getTrueAnswer();
 
     //Method for setting answer to true or false
+    //@param answer
     @Override void setTrueAnswer(String answer){
         if(answer.equals("1")){
             answer="true";

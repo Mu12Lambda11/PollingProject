@@ -1,4 +1,4 @@
-abstract class Question {
+public class Question {
     //variables for questions and the true question
     private static String questionText="Sample Question";
     private static String questionAnswer="Sample Answer";
